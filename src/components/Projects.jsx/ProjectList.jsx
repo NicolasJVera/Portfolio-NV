@@ -5,7 +5,7 @@ const ProjectList = () => {
     {
       id: 1,
       title: 'Black Star - Alternative Anime Clothing',
-      description: 'Este proyecto fue de lo mas divertido de hacer por lo que me se hizo muy hacerlo. Es una tienda de ropa alternativa y de anime. Este proyecto Lo creé utilizando HTML, CSS y JS.',
+      description: 'Este proyecto fue de lo mas divertido de hacer, por lo que me se hizo muy llevadero hacerlo. Es una tienda de ropa alternativa y de anime. Este proyecto Lo creé utilizando HTML, CSS y JS.',
       image: '/proyecto-1.webp',
       githubLink: 'https://github.com/NicolasJVera/Integrador-JS-Nucba',
       projectLink: 'https://integrador-js-nucba-pi.vercel.app'
