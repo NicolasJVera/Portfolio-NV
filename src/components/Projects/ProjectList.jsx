@@ -5,15 +5,15 @@ const ProjectList = () => {
     {
       id: 1,
       title: 'Black Star - Alternative Anime Clothing',
-      description: 'Este proyecto fue de lo mas divertido de hacer, por lo que me se hizo muy llevadero hacerlo. Es una tienda de ropa alternativa y de anime. Este proyecto Lo creé utilizando HTML, CSS y JS.',
+      description: 'Este proyecto Lo creé utilizando React, Redux Toolkit, React Router y styled-components. Fue un proyecto integrador que me permitio aplicar todo lo aprendido en el curso de React.',
       image: '/proyecto-1.webp',
-      githubLink: 'https://github.com/NicolasJVera/Integrador-JS-Nucba',
-      projectLink: 'https://integrador-js-nucba-pi.vercel.app'
+      githubLink: 'https://github.com/NicolasJVera/Proyecto-Integrador-React-JS',
+      projectLink: 'https://proyecto-integrador-react-js-gamma.vercel.app/'
     },
     {
       id: 2,
       title: 'Contador de Calorias',
-      description: 'Este segundo proyecto es un contador de calorias el cual te deja ver el registro de tus comidas quemadas y consumidas, tambien ver la diferencia si consumiste mas o menos Kcal. Este proyecto Lo creé utilizando React con useReducer, TS y TailwindCSS.',
+      description: 'Este proyecto es un contador de calorias el cual te deja ver el registro de tus comidas quemadas y consumidas, tambien ver la diferencia si consumiste mas o menos Kcal. Este proyecto Lo creé utilizando React con useReducer, TypeScript y TailwindCSS.',
       image: '/proyecto-2.webp',
       githubLink: 'https://github.com/NicolasJVera/Calorie-Tracker',
       projectLink: 'https://calorie-tracker-tan-eta.vercel.app'
@@ -37,7 +37,7 @@ const ProjectList = () => {
   ];
 
   return (
-    <div className="flex flex-wrap justify-center gap-8">
+    <div className="flex flex-col items-center gap-12 w-full max-w-3xl mx-auto">
       {project.map(project => (
         <ProjectCard
           key={project.id}
