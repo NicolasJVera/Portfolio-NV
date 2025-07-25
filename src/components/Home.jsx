@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaGithub, FaFilePdf } from "react-icons/fa";
 import TypewriterEffect from "./ui/TypewriterEffect";
 
 const Home = () => {
@@ -35,11 +35,12 @@ const Home = () => {
             <span>LinkedIn</span>
           </a>
           <a
-            href="mailto:nico03veraa@gmail.com"
-            className="flex items-center space-x-2 px-4 py-2 bg-gray-700 rounded-full hover:bg-gray-600 transition duration-300"
+            href="/NicolasVeraCV.pdf"
+            download="CV_Nicolas_Vera.pdf"
+            className="flex items-center space-x-2 px-4 py-2 bg-gray-500 rounded-full hover:bg-gray-600 transition duration-300"
           >
-            <FaEnvelope className="text-2xl" />
-            <span>Email</span>
+            <FaFilePdf className="text-2xl" />
+            <span>Descargar CV</span>
           </a>
           <a
             href="https://github.com/NicolasJVera"
