@@ -13,10 +13,12 @@ const SkillsData = [
   { name: "React", icon: <FaReact className="text-6xl text-blue-600" /> },
   { name: "TypeScript", icon: <SiTypescript className="text-6xl text-blue-500" /> },
   { name: "MySQL", icon: <SiMysql className="text-6xl text-blue-500" /> },
-  { name: "Astro", icon: <SiAstro className="text-6xl" /> },
-  { name: "GitHub", icon: <IoLogoGithub className="text-6xl" /> },
+  { name: "Astro", icon: <SiAstro className="text-6xl text-orange-500" /> },
+  { name: "GitHub", icon: <IoLogoGithub className="text-6xl text-white" /> },
   { name: "Git", icon: <FaGitAlt className="text-6xl text-orange-800" /> },
   { name: "MongoDB", icon: <FaDatabase className="text-6xl text-green-500" /> },
+  // { name: "PostgreSQL", icon: <SiPostgresql className="text-6xl text-blue-600" /> },
+  // { name: "Claude Code", icon: <SiClaude className="text-6xl text-orange-500" /> },
 ];
 
 export default SkillsData;

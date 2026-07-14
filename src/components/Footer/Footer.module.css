@@ -1,0 +1,46 @@
+.footer {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  padding: 1.5rem 0;
+}
+
+.footerContainer {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.footerCopyright {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footerLink {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.footerLink:hover {
+  color: var(--color-accent-light);
+}
+
+.footerLink.linkedin:hover {
+  color: #0077b5;
+}
+
+.footerLink.github:hover {
+  color: var(--color-text-primary);
+}

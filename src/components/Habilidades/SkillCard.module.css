@@ -1,0 +1,26 @@
+.skillCard {
+  background-color: var(--color-bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  box-shadow: var(--shadow-md);
+  min-width: 150px;
+}
+
+.skillCard:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.skillIcon {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.skillName {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}

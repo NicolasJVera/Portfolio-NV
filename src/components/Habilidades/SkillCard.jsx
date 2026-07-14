@@ -1,8 +1,10 @@
+import styles from './SkillCard.module.css';
+
 const SkillCard = ({ icon, name }) => {
   return (
-    <div className="flex flex-col items-center transition-all transform hover:scale-110 hover:text-indigo-300">
-      {icon}
-      <h3 className="text-xl mt-2">{name}</h3>
+    <div className={styles.skillCard}>
+      <div className={styles.skillIcon}>{icon}</div>
+      <h3 className={styles.skillName}>{name}</h3>
     </div>
   );
 };

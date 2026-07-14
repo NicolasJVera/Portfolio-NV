@@ -1,0 +1,104 @@
+.projectCard {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.projectCard:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: var(--shadow-xl);
+}
+
+.projectCardImageContainer {
+  position: relative;
+  flex-shrink: 0;
+  width: 33.333%;
+}
+
+.projectCardImage {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.projectCardOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: var(--radius-md);
+}
+
+.projectCardImageContainer:hover .projectCardOverlay {
+  opacity: 1;
+}
+
+.projectCardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.projectCardDescription {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.projectCardLinks {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.projectCardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color var(--transition-base);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.projectCardLinkPrimary {
+  background-color: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.projectCardLinkPrimary:hover {
+  background-color: var(--color-accent-light);
+}
+
+.projectCardLinkSecondary {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+.projectCardLinkSecondary:hover {
+  background-color: var(--color-border-light);
+}

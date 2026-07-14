@@ -1,12 +1,22 @@
+import { motion } from "framer-motion";
 import ProjectList from "./ProjectList";
+import styles from './Project.module.css';
 
 export default function Project() {
   return (
     <>
-    <section id="projects" className="min-h-screen bg-gray-900 text-white flex flex-col justify-center items-center space-y-8 px-4">
-    <h2 className="text-4xl text-center text-white">Proyectos</h2>
-    <ProjectList />
-  </section>
+    <section id="projects" className={styles.projects}>
+      <motion.h2 
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className={styles.projectsTitle}
+      >
+        Proyectos
+      </motion.h2>
+      <ProjectList />
+    </section>
     </>
   )
 }
