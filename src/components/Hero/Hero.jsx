@@ -16,7 +16,7 @@ const Hero = () => {
         <h1>
           ¡Hola, Soy Nicolas Vera{' '}
           <span>
-            <TypewriterEffect text="Front-End Developer" speed={100} />
+            <TypewriterEffect text="Full Stack Developer" speed={100} />
             <span>|</span> 
           </span>
         </h1>

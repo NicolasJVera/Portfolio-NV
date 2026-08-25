@@ -1,4 +1,4 @@
-import ProjectCard from "./ProjectCard";
+import ProjectCard from "../Cards/ProjectCard";
 import { motion } from "framer-motion";
 import styles from './ProjectList.module.css';
 
@@ -12,6 +12,10 @@ const ProjectList = () => {
       image: "/proyecto-1.webp",
       githubLink: 'https://github.com/NicolasJVera/Proyecto-Integrador-React-JS',
       projectLink: "https://proyecto-integrador-react-js-gamma.vercel.app/",
+      technologies: ["React", "Redux Toolkit", "React Router", "styled-components"],
+      date: "2024",
+      category: "E-commerce",
+      client: "Proyecto Personal",
     },
     // {
     //   id: 2,
@@ -32,9 +36,24 @@ const ProjectList = () => {
     {
       id: 4,
       title: "CodeSign - Diseño Web, Desarrollo Digital",
-      description: "Sitio web para una agencia de diseño y desarrollo digital",
+      description: "Sitio web para una agencia de diseño y desarrollo digital. El sitio cuenta con un diseño moderno y responsive, con un sistema de gestión de contenido (CMS) para facilitar la actualización de proyectos y servicios.",
       image: "/codesign.png",
       projectLink: "https://codesignarg.com",
+      technologies: ["React", "Vite", "CSS Modules"],
+      date: "2024",
+      category: "Portfolio",
+      client: "CodeSign",
+    },
+    {
+      id: 5,
+      title: "Cin Acosta Make Up & Hair",
+      description: "Sitio web profesional para maquilladora especializada en novias con más de 12 años de experiencia. Diseño elegante y moderno para destacar servicios de maquillaje bridal y looks especiales.",
+      image: "/proyecto-5.webp",
+      projectLink: "https://www.cinacostamakeup.com/",
+      technologies: ["React", "Vite", "CSS Modules"],
+      date: "2024",
+      category: "Landing Page",
+      client: "Cintia Acosta",
     },
   ];
 
@@ -54,6 +73,10 @@ const ProjectList = () => {
             image={project.image}
             githubLink={project.githubLink}
             projectLink={project.projectLink}
+            technologies={project.technologies}
+            date={project.date}
+            category={project.category}
+            client={project.client}
           />
         </motion.div>
       ))}

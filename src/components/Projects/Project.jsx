@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import ProjectList from "./ProjectList";
+import ProjectList from "./List/ProjectList";
 import styles from './Project.module.css';
 
 export default function Project() {
