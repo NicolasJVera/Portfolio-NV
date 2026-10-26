@@ -6,15 +6,38 @@
 }
 
 .skillsContainer {
-  max-width: 64rem;
+  max-width: 80rem;
   margin: 0 auto;
 }
 
 .skillsTitle {
   font-size: 2.5rem;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 2rem;
   color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-shadow:
+    0 0 8px var(--color-accent),
+    0 0 16px var(--color-accent),
+    0 0 32px var(--color-accent);
+  animation: neonGlow 3s ease-in-out infinite;
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 8px var(--color-accent),
+      0 0 16px var(--color-accent),
+      0 0 32px var(--color-accent);
+  }
+  50% {
+    text-shadow:
+      0 0 12px var(--color-accent),
+      0 0 24px var(--color-accent),
+      0 0 48px var(--color-accent);
+  }
 }
 
 .skillsDescription {
@@ -26,7 +49,87 @@
 
 .skillsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skillCategory {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-lg);
+}
+
+.skillCategory:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.categoryIcon {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-highlight));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+}
+
+.categoryIconSvg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.categoryTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.categoryDescription {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.technologiesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.technologyTag {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-accent-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.technologyTag:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent-light);
+  color: var(--color-text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }

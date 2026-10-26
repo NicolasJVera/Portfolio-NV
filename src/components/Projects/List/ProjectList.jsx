@@ -3,6 +3,28 @@ import { motion } from "framer-motion";
 import styles from './ProjectList.module.css';
 
 const ProjectList = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.4, 0, 0.2, 1],
+      },
+    },
+  };
+
   const project = [
     {
       id: 1,
@@ -40,7 +62,7 @@ const ProjectList = () => {
       image: "/codesign.png",
       projectLink: "https://codesignarg.com",
       technologies: ["React", "Vite", "CSS Modules"],
-      date: "2024",
+      date: "2026",
       category: "Portfolio",
       client: "CodeSign",
     },
@@ -51,21 +73,37 @@ const ProjectList = () => {
       image: "/proyecto-5.webp",
       projectLink: "https://www.cinacostamakeup.com/",
       technologies: ["React", "Vite", "CSS Modules"],
-      date: "2024",
+      date: "2026",
       category: "Landing Page",
       client: "Cintia Acosta",
+    },
+    {
+      id: 6,
+      title: "Recuerdos de NiLu",
+      description: "Página web personal creada para celebrar un aniversario de 3 años con mi pareja. Diseño íntimo y moderno para compartir y preservar recuerdos significativos de nuestra historia juntos.",
+      image: "/proyecto-6.webp",
+      projectLink: "https://recuerdos-de-nilu-peach.vercel.app/",
+      technologies: ["React", "TypeScript", "TailwindCSS", "Framer Motion", "Lucide React", "Vite"],
+      date: "2026",
+      category: "Landing Page",
+      client: "Personal",
     },
   ];
 
   return (
-    <div className={styles.projectList}>
-      {project.map((project, index) => (
+    <motion.div
+      className={styles.projectList}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      {project.map((project) => (
         <motion.div
           key={project.id}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
+          variants={itemVariants}
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.3 }}
         >
           <ProjectCard
             title={project.title}
@@ -80,7 +118,7 @@ const ProjectList = () => {
           />
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

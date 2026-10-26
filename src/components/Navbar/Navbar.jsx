@@ -2,7 +2,7 @@ import { Link, scroller } from "react-scroll";
 import { BsDiagram3 } from "react-icons/bs";
 import { IoHomeOutline } from "react-icons/io5";
 import { FaLaptopCode } from "react-icons/fa6";
-import { FaUser, FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaGraduationCap } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import styles from './Navbar.module.css';
 
@@ -12,9 +12,9 @@ const Navbar = () => {
 
   const sections = [
     { id: "inicio", name: "Inicio", icon: <IoHomeOutline style={{ fontSize: '1.5rem' }} />, to: "home" },
-    { id: "sobre-mi", name: "Sobre Mí", icon: <FaUser style={{ fontSize: '1.5rem' }} />, to: "about" },
-    { id: "proyectos", name: "Proyectos", icon: <FaLaptopCode style={{ fontSize: '1.5rem' }} />, to: "projects" },
+    { id: "educacion", name: "Educación", icon: <FaGraduationCap style={{ fontSize: '1.5rem' }} />, to: "education" },
     { id: "habilidades", name: "Habilidades", icon: <BsDiagram3 style={{ fontSize: '1.5rem' }} />, to: "skills" },
+    { id: "proyectos", name: "Proyectos", icon: <FaLaptopCode style={{ fontSize: '1.5rem' }} />, to: "projects" },
     { id: "contacto", name: "Contacto", icon: <FaEnvelope style={{ fontSize: '1.5rem' }} />, to: "contact" },
   ];
 

@@ -18,16 +18,29 @@
   --color-bg-secondary: #111118;
   --color-bg-tertiary: #1a1a24;
 
+  --color-border: #2a2a35;
+  --color-border-light: #3a3a45;
+
   --gradient-primary:linear-gradient(135deg, #3b82f6, #08080a);
 
   --gradient-secondary:linear-gradient(135deg,#08080a,#3b82f6);
-  
+
+  /* Sombras */
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+  /* Bordes */
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  /* Transiciones */
+  --transition-base: 0.3s ease;
+
   /* Fuentes */
-  --font-heading: 'Raleway', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
   --font-body: 'Poppins', sans-serif;
-  
+
   --radius-full: 9999px;
-  
+
 }
 
 /* Reset */

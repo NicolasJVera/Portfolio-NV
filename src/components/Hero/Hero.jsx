@@ -17,11 +17,11 @@ const Hero = () => {
           ¡Hola, Soy Nicolas Vera{' '}
           <span>
             <TypewriterEffect text="Full Stack Developer" speed={100} />
-            <span>|</span> 
+            <span>|</span>
           </span>
         </h1>
         <p>
-          Apasionado por el desarrollo web y la creación de interfaces modernas y funcionales. Siempre en busca de mejorar mis habilidades y aprender nuevas tecnologías.
+          Desarrollador Full Stack apasionado por crear experiencias web modernas y funcionales. Me especializo en React, TypeScript y tecnologías frontend de vanguardia. Siempre en constante aprendizaje, transformando ideas en código limpio y eficiente.
         </p>
 
         {/* Botones de Redes */}
