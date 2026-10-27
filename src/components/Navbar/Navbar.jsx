@@ -4,18 +4,22 @@ import { IoHomeOutline } from "react-icons/io5";
 import { FaLaptopCode } from "react-icons/fa6";
 import { FaEnvelope, FaGraduationCap } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { useLanguage } from "../../context/LanguageContext";
+import { useTranslations } from "../../hooks/useTranslations";
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const [active, setActive] = useState("inicio");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const t = useTranslations();
 
   const sections = [
-    { id: "inicio", name: "Inicio", icon: <IoHomeOutline style={{ fontSize: '1.5rem' }} />, to: "home" },
-    { id: "educacion", name: "Educación", icon: <FaGraduationCap style={{ fontSize: '1.5rem' }} />, to: "education" },
-    { id: "habilidades", name: "Habilidades", icon: <BsDiagram3 style={{ fontSize: '1.5rem' }} />, to: "skills" },
-    { id: "proyectos", name: "Proyectos", icon: <FaLaptopCode style={{ fontSize: '1.5rem' }} />, to: "projects" },
-    { id: "contacto", name: "Contacto", icon: <FaEnvelope style={{ fontSize: '1.5rem' }} />, to: "contact" },
+    { id: "inicio", name: t.navbar.home, icon: <IoHomeOutline style={{ fontSize: '1.5rem' }} />, to: "home" },
+    { id: "educacion", name: t.navbar.education, icon: <FaGraduationCap style={{ fontSize: '1.5rem' }} />, to: "education" },
+    { id: "habilidades", name: t.navbar.skills, icon: <BsDiagram3 style={{ fontSize: '1.5rem' }} />, to: "skills" },
+    { id: "proyectos", name: t.navbar.projects, icon: <FaLaptopCode style={{ fontSize: '1.5rem' }} />, to: "projects" },
+    { id: "contacto", name: t.navbar.contact, icon: <FaEnvelope style={{ fontSize: '1.5rem' }} />, to: "contact" },
   ];
 
   useEffect(() => {
@@ -67,6 +71,15 @@ const Navbar = () => {
               </span>
             </li>
           ))}
+          {/* <li className={styles.navbarItem}>
+            <button
+              onClick={toggleLanguage}
+              className={styles.languageButton}
+              title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+            >
+              {language === 'es' ? 'EN' : 'ES'}
+            </button>
+          </li> */}
         </ul>
       </nav>
 
@@ -104,6 +117,14 @@ const Navbar = () => {
                 </button>
               </li>
             ))}
+            <li>
+              <button
+                onClick={toggleLanguage}
+                className={styles.mobileLanguageButton}
+              >
+                {language === 'es' ? '🇺🇸 English' : '🇪🇸 Español'}
+              </button>
+            </li>
           </ul>
         </nav>
       )}

@@ -2,8 +2,8 @@ import * as Yup from 'yup';
 
 export const contactSchema = Yup.object().shape({
   name: Yup.string()
-    .min(5, 'El nombre debe tener al menos 5 caracteres')
-    .max(20, 'El nombre no puede exceder 20 caracteres')
+    .min(4, 'El nombre debe tener al menos 4 caracteres')
+    .max(25, 'El nombre no puede exceder 25 caracteres')
     .required('El nombre es requerido'),
   email: Yup.string()
     .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Email inválido')

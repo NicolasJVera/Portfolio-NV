@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaFilePdf, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 import TypewriterEffect from "../ui/TypewriterEffect";
 import styles from './Hero.module.css';
+import { useTranslations } from "../../hooks/useTranslations";
 
 const Hero = () => {
+  const t = useTranslations();
+
   return (
     <section id="home" className={styles.hero}>
       {/* Contenido de Presentación */}
@@ -14,14 +17,14 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
       >
         <h1>
-          ¡Hola, Soy Nicolas Vera{' '}
+          {t.hero.greeting}{' '}
           <span>
-            <TypewriterEffect text="Full Stack Developer" speed={100} />
+            <TypewriterEffect text={t.hero.role} speed={100} />
             <span>|</span>
           </span>
         </h1>
         <p>
-          Desarrollador Full Stack apasionado por crear experiencias web modernas y funcionales. Me especializo en React, TypeScript y tecnologías frontend de vanguardia. Siempre en constante aprendizaje, transformando ideas en código limpio y eficiente.
+          {t.hero.description}
         </p>
 
         {/* Botones de Redes */}
@@ -33,25 +36,29 @@ const Hero = () => {
             className={`${styles.heroButton} ${styles.heroButtonPrimary}`}
           >
             <FaLinkedin style={{ fontSize: '1.5rem' }} />
-            <span>LinkedIn</span>
           </a>
           <a
             href="/NicolasVeraCV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className={`${styles.heroButton} ${styles.heroButtonSecondary}`}
+            className={styles.heroButton}
           >
             <FaFilePdf style={{ fontSize: '1.5rem' }} />
-            <span>Descargar CV</span>
+            <span>{t.hero.downloadCV}</span>
           </a>
           <a
             href="https://github.com/NicolasJVera"
             target="_blank"
             rel="noopener noreferrer"
-            className={`${styles.heroButton} ${styles.heroButtonSecondary}`}
+            className={styles.heroButton}
           >
             <FaGithub style={{ fontSize: '1.5rem' }} />
-            <span>GitHub</span>
+          </a>
+          <a href="mailto:nico03veraa@gmail.com" className={styles.heroButton}>
+            <FaEnvelope style={{ fontSize: '1.5rem' }} />
+          </a>
+          <a href="https://wa.me/541165473420" target="_blank" rel="noopener noreferrer" className={styles.heroButton}>
+            <FaWhatsapp style={{ fontSize: '1.5rem' }} />
           </a>
         </div>
       </motion.div>

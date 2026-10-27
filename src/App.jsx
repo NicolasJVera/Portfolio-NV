@@ -5,11 +5,11 @@ import Project from "./components/Projects/Project"
 import Education from "./components/Education/Education"
 import Contact from "./components/Contact/Contact"
 import Hero from "./components/Hero/Hero"
-import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton"
+import { LanguageProvider } from "./context/LanguageContext"
 
 function App() {
   return (
-    <>
+    <LanguageProvider>
       <Navbar />
       <Hero/>
       <Education/>
@@ -17,8 +17,7 @@ function App() {
       <Project/>
       <Contact/>
       <Footer/>
-      <WhatsAppButton />
-    </>
+    </LanguageProvider>
   )
 }
 

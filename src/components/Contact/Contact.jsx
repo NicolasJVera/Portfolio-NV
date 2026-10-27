@@ -1,55 +1,17 @@
 import { motion } from "framer-motion";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
-import emailjs from "@emailjs/browser";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { contactSchema } from "./formik/formik";
-import { useState } from "react";
+import { useContactForm } from "./hook/useContactForm";
 import styles from './Contact.module.css';
 
 const Contact = () => {
-  const [submitMessage, setSubmitMessage] = useState('');
-  const [messageType, setMessageType] = useState(''); // 'success' or 'error'
-
-  const initialValues = {
-    name: '',
-    email: '',
-    message: ''
-  };
-
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    try {
-      const response = await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          name: values.name,
-          email: values.email,
-          message: values.message,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
-      if (response.status === 200) {
-        setSubmitMessage('¡Mensaje enviado con éxito!');
-        setMessageType('success');
-        setTimeout(() => {
-          setSubmitMessage('');
-          setMessageType('');
-        }, 3000);
-        resetForm();
-      } 
-    } catch (error) {
-      console.error('Error:', error);
-      setSubmitMessage('Hubo un error al enviar el mensaje');
-      setMessageType('error');
-      setTimeout(() => {
-        setSubmitMessage('');
-        setMessageType('');
-      }, 3000);
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  const {
+    initialValues,
+    validationSchema,
+    handleSubmit,
+    submitMessage,
+    messageType
+  } = useContactForm();
 
   return (
     <section id="contact" className={styles.contact}>
@@ -77,7 +39,7 @@ const Contact = () => {
                   className={styles.contactInfoLink}
                 >
                   <FaEnvelope className={styles.contactInfoLinkIcon} />
-                  <span>nico03veraa@gmail.com</span>
+                  <span></span>
                 </a>
                 
                 <a
@@ -87,7 +49,7 @@ const Contact = () => {
                   className={styles.contactInfoLink}
                 >
                   <FaLinkedin className={styles.contactInfoLinkIcon} />
-                  <span>LinkedIn</span>
+                  <span></span>
                 </a>
                 
                 <a
@@ -97,7 +59,7 @@ const Contact = () => {
                   className={styles.contactInfoLink}
                 >
                   <FaGithub className={styles.contactInfoLinkIcon} />
-                  <span>GitHub</span>
+                  <span></span>
                 </a>
               </div>
             </div>
@@ -105,10 +67,10 @@ const Contact = () => {
             {/* Formulario con Formik */}
             <Formik
               initialValues={initialValues}
-              validationSchema={contactSchema}
+              validationSchema={validationSchema}
               onSubmit={handleSubmit}
             >
-              {({ isSubmitting }) => (
+              {({ isSubmitting, dirty, isValid }) => (
                 <Form className={styles.contactForm}>
                   <div className={styles.formGroup}>
                     <label htmlFor="name" className={styles.formLabel}>
@@ -166,7 +128,7 @@ const Contact = () => {
                   
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !dirty || !isValid}
                     className={styles.formButton}
                   >
                     {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}

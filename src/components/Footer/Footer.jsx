@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 import styles from './Footer.module.css';
 
 const Footer = () => {
@@ -23,6 +23,22 @@ const Footer = () => {
             className={`${styles.footerLink} ${styles.footerLink.github}`}
           >
             <FaGithub />
+          </a>
+          <a 
+            href="https://wa.me/541165473420" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={`${styles.footerLink} ${styles.footerLink.whatsapp}`}
+          >
+            <FaWhatsapp />
+          </a>
+          <a 
+            href="mailto:nico03veraa@gmail.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={`${styles.footerLink} ${styles.footerLink.email}`}
+          >
+            <FaEnvelope />
           </a>
         </div>
       </div>
